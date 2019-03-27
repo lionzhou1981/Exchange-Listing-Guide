@@ -7,6 +7,7 @@ BTC   | Bitcoin
 DASH  | Dash
 LTC   | Litecoin
 MONA  | Monacoin
+OMNI  | OmniLayer
 QTUM  | Qutm
 ZEC   | Zcash
 
@@ -20,7 +21,6 @@ LSK - Lisk
 MOAC - MOAC  
 NEO - NEO  
 NEP5 - NEO NEP5 Token  
-OMNI - OmniLayer  
 TRX - Tron  
 TRC10 - Tron TRC10 Token  
 XMR - Monero  

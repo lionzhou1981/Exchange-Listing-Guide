@@ -31,7 +31,7 @@ https://bch.btc.com/
 1、估算当前费用
 ```
 curl -X POST -H 'content-type: text/plain;' http://127.0.0.1:8332/ -u RPC用户:RPC密码 \
--d '{"jsonrpc":"1.0","id":"随便写","method":"estimatefee","params":[期望多少个区块内到达]}'  
+-d '{"jsonrpc":"1.0","id":"随便写","method":"estimatefee","params":[]}'  
 ```
 2-4、同 BTC - Bitcoin
 

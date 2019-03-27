@@ -13,7 +13,7 @@ http://explorer.litecoin.net/chain/Litecoin
 * 同 BTC - Bitcoin
 
 ### 安装说明：
-* 同 BTC - Bitcoin (文件名区别)
+* 同 BTC - Bitcoin (文件名不同)
 
 ### 配置文件：
 * 同 BTC - Bitcoin

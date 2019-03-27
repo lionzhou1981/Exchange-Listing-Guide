@@ -43,7 +43,7 @@ curl -X POST -H 'content-type: text/plain;' http://127.0.0.1:8332/ -u RPC用户:
 * 注意需要验证valid字段是否为true。
 * 追踪OMNI入账的同时需要追踪BTC的入账，以备对外提币是使用
 
-### 对外提币：∂
+### 对外提币：
 1、估算当前费用
 ```
 curl -X POST -H 'content-type: text/plain;' http://127.0.0.1:8332/ -u RPC用户:RPC密码 \

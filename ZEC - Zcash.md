@@ -1,22 +1,26 @@
-# Litecoin - LTC
+# Zcash - ZEC
 
 ### 官网地址：
-https://litecoin.org
+https://z.cash/
 
 ### 钱包下载：
-* 同官网
+https://zcash.readthedocs.io/en/latest/rtd_pages/install_binary_tarball.html
 
 ### 查询网站：
-http://explorer.litecoin.net/chain/Litecoin
+https://zcash.tokenview.com/
 
 ### 开发文档
-* 同 BTC - Bitcoin
+https://zcash.readthedocs.io/
 
 ### 安装说明：
 * 同 BTC - Bitcoin (文件名区别)
 
 ### 配置文件：
 * 同 BTC - Bitcoin
+* 加上一下这段
+```
+addnode=mainnet.z.cash
+```
 
 ### 升级说明：
 * 同 BTC - Bitcoin
@@ -31,7 +35,7 @@ http://explorer.litecoin.net/chain/Litecoin
 1、估算当前费用
 ```
 curl -X POST -H 'content-type: text/plain;' http://127.0.0.1:8332/ -u RPC用户:RPC密码 \
--d '{"jsonrpc":"1.0","id":"随便写","method":"estimatesmartfee","params":[期望多少个区块内到达]}'  
+-d '{"jsonrpc":"1.0","id":"随便写","method":"estimatefee","params":[期望多少个区块内到达]}'  
 ```
 
 2、创建RAW交易

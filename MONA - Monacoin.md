@@ -1,13 +1,13 @@
-# Litecoin - LTC
+# Monacoin - MONA
 
 ### 官网地址：
-https://litecoin.org
+https://monacoin.org/
 
 ### 钱包下载：
 * 同官网
 
 ### 查询网站：
-http://explorer.litecoin.net/chain/Litecoin
+https://mona.chainseeker.info/
 
 ### 开发文档
 * 同 BTC - Bitcoin

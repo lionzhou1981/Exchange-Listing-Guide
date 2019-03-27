@@ -1,13 +1,13 @@
-# Litecoin - LTC
+# Dash - DASH
 
 ### 官网地址：
-https://litecoin.org
+https://www.dash.org/
 
 ### 钱包下载：
-* 同官网
+https://www.dash.org/downloads/
 
 ### 查询网站：
-http://explorer.litecoin.net/chain/Litecoin
+https://explorer.dash.org/chain/Dash
 
 ### 开发文档
 * 同 BTC - Bitcoin

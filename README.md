@@ -2,27 +2,17 @@
 BTC - Bitcoin
 
 ## 待完成
-ETH - Ethereum
-
-ERC20 - Ethereum ERC20 Token
-
-BCH - BitcoinCash
-
-BSV - BitcoinSV
-
-LTC - Litecoin
-
-ADA - Cardano
-
-CMT - Cybermile
-
-EOS - EOS
-
-LSK - Lisk
-
-NEO - NEO
-
-NEP5 - NEO NEP5 Token
+ETH - Ethereum  
+ERC20 - Ethereum ERC20 Token  
+BCH - BitcoinCash  
+BSV - BitcoinSV  
+LTC - Litecoin  
+ADA - Cardano  
+CMT - Cybermile  
+EOS - EOS  
+LSK - Lisk  
+NEO - NEO  
+NEP5 - NEO NEP5 Token  
 
 OMNI - OmniLayer
 

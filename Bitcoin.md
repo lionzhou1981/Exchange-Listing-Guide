@@ -56,8 +56,11 @@ rpcallowip=                 #允许访问的IP
 
 ### 升级说明：
 1、下载最新的版本
+
 2、重命名旧版本的程序目录以做备份
+
 3、解压缩新的压缩包并改名为bitcoin
+
 4、重启服务
 ```
 systemctl restart bitcoin

@@ -83,28 +83,53 @@ curl -X POST -H 'content-type: text/plain;' http://127.0.0.1:8332/ -u RPC用户:
 1、获取最新的区块高度
 ```
 curl -X POST -H 'content-type: text/plain;' http://127.0.0.1:8332/ -u RPC用户:RPC密码 \
--d '{"jsonrpc":"1.0","id":"curltest","method":"getblockcount","params":[]}'  
+-d '{"jsonrpc":"1.0","id":"随便写","method":"getblockcount","params":[]}'  
 ```
 2、根据区块高度获取区块Hash
 ```
 curl -X POST -H 'content-type: text/plain;' http://127.0.0.1:8332/ -u RPC用户:RPC密码 \
--d '{"jsonrpc":"1.0","id":"curltest","method":"getblockhash","params":[区块高度]}'  
+-d '{"jsonrpc":"1.0","id":"随便写","method":"getblockhash","params":[区块高度]}'  
 ```
 3、根据区块Hash获取交易列表
 ```
 curl -X POST -H 'content-type: text/plain;' http://127.0.0.1:8332/ -u RPC用户:RPC密码 \
--d '{"jsonrpc":"1.0","id":"curltest","method":"getblock","params":["区块Hash"]}'  
+-d '{"jsonrpc":"1.0","id":"随便写","method":"getblock","params":["区块Hash"]}'  
 ```
 4、根据TxId获取具体信息
 ```
 curl -X POST -H 'content-type: text/plain;' http://127.0.0.1:8332/ -u RPC用户:RPC密码 \
--d '{"jsonrpc":"1.0","id":"curltest","method":"gettransaction","params":["交易TxId"]}'  
+-d '{"jsonrpc":"1.0","id":"随便写","method":"gettransaction","params":["交易TxId"]}'  
 ```
 
 ### 对外提币：
+1、估算当前费用
+```
+curl -X POST -H 'content-type: text/plain;' http://127.0.0.1:8332/ -u RPC用户:RPC密码 \
+-d '{"jsonrpc":"1.0","id":"随便写","method":"estimatesmartfee","params":[期望多少个区块内到达]}'  
+```
+
+2、创建RAW交易
+```
+curl -X POST -H 'content-type: text/plain;' http://127.0.0.1:8332/ -u RPC用户:RPC密码 \
+-d '{"jsonrpc":"1.0","id":"随便写","method":"signrawtransactionwithkey","params":[[{"txid":"输出的Txid","vout":输出的Tx的序号}],[{"接收地址":接收金额}]}'  
+```
+
+3、签名RAW交易
+```
+curl -X POST -H 'content-type: text/plain;' http://127.0.0.1:8332/ -u RPC用户:RPC密码 \
+-d '{"jsonrpc":"1.0","id":"随便写","method":"signrawtransactionwithkey","params":["创建RAW返回的Hex",["相关输出地址的私钥"]}'  
+```
+
+4、发送RAW交易
+```
+curl -X POST -H 'content-type: text/plain;' http://127.0.0.1:8332/ -u RPC用户:RPC密码 \
+-d '{"jsonrpc":"1.0","id":"随便写","method":"sendrawtransaction","params":["完成签名的Hex"]}'  
+```
 
 ### 归集处理：
 * Bitcoin无需归集
 
 ### 灾难恢复：
 * 用户私钥加密后另外存储，以做备份，灾难发生时重建节点即可
+
+### 注意事项：

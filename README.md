@@ -2,37 +2,27 @@
 BTC - Bitcoin
 
 ## 待完成
-ETH - Ethereum  
-ERC20 - Ethereum ERC20 Token  
+ADA - Cardano  
 BCH - BitcoinCash  
 BSV - BitcoinSV  
-LTC - Litecoin  
-ADA - Cardano  
 CMT - Cybermile  
+DASH - Dash  
 EOS - EOS  
+ERC20 - Ethereum ERC20 Token  
+ETH - Ethereum  
 LSK - Lisk  
+LTC - Litecoin  
+MOAC - MOAC  
 NEO - NEO  
 NEP5 - NEO NEP5 Token  
-
-OMNI - OmniLayer
-
-QTUM - Qtum
-
-TRX - Tron
-
-TRC10 - Tron TRC10 Token
-
-XMR - Monero
-
-DASH - Dash
-
-ZEC - Zcash
-
-XRP - Ripple
-
-MOAC - MOAC
+OMNI - OmniLayer  
+QTUM - Qtum  
+TRX - Tron  
+TRC10 - Tron TRC10 Token  
+XMR - Monero  
+XRP - Ripple  
+ZEC - Zcash  
 
 ## 计划中
-XLM - Stellar
-
+XLM - Stellar  
 XEM - NEM

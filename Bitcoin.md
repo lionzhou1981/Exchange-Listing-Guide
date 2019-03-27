@@ -11,10 +11,23 @@ https://btc.com/
 
 ### 安装说明：
 1、解压缩文件
-```tar -xvf bitcoin-0.17.1-x86_64-linux-gnu.tar.gz
-```
+`tar -xvf bitcoin-0.17.1-x86_64-linux-gnu.tar.gz`
+2、创建服务
+`vi /usr/lib/systemd/system/bitcoin.service`
+`[Unit]
+Description=Bitcoin
 
-#### 配置文件：
+[Service]
+Type=forking
+
+ExecStart=/安装目录/bin/bitcoind -daemon -conf=/数据目录/bitcoin.conf
+ExecStop=/安装目录/bin/bitcoin-cli -stop -conf=/数据目录/bitcoin.conf
+
+[Install]
+WantedBy=multi-user.target
+`
+
+### 配置文件：
 
 ### 升级说明：
 

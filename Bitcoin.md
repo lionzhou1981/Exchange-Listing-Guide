@@ -16,6 +16,7 @@ https://bitcoincore.org/en/doc/0.17.0/
 1、解压缩文件
 ```
 tar -xvf bitcoin-0.17.1-x86_64-linux-gnu.tar.gz
+mv bitcoin-0.17.1-x86_64-linux-gnu bitcoin
 ```
 
 2、创建服务
@@ -47,15 +48,29 @@ txindex=1
 datadir=/btc-data           #数据存储目录
 
 rpcbind=127.0.0.1           #RPC端口，建议127.0.0.1
-rpcport=12345
+rpcport=8332
 rpcuser=                    #RPC用户名
 rpcauth=                    #RPC认证信息
 rpcallowip=                 #允许访问的IP
 ```
 
 ### 升级说明：
+1、下载最新的版本
+2、重命名旧版本的程序目录以做备份
+3、解压缩新的压缩包并改名为bitcoin
+4、重启服务
+```
+systemctl restart bitcoin
+```
+5、观察debug.log是否正常
+```
+tail -f /数据目录/debug.log
+```
 
 ### 创建地址：
+```
+curl -X POST -H 'content-type: text/plain;' http://127.0.0.1:8332/ -u RPC用户:RPC密码 -d '{"jsonrpc":"1.0","id":"curltest","method":"getnewaddress","params":[]}'  
+```
 
 ### 追踪入账：
 

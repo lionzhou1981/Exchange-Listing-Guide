@@ -9,6 +9,9 @@ https://bitcoincore.org/en/download/
 ### 查询网站：
 https://btc.com/
 
+### 开发文档
+https://bitcoincore.org/en/doc/0.17.0/
+
 ### 安装说明：
 1、解压缩文件
 ```
@@ -34,6 +37,21 @@ WantedBy=multi-user.target
 ```
 
 ### 配置文件：
+```
+vi /数据目录/bitcoin.conf
+```
+```
+bind=127.0.0.1              #绑定端口，建议127.0.0.1
+server=1                    
+txindex=1
+datadir=/btc-data           #数据存储目录
+
+rpcbind=127.0.0.1           #RPC端口，建议127.0.0.1
+rpcport=12345
+rpcuser=                    #RPC用户名
+rpcauth=                    #RPC认证信息
+rpcallowip=                 #允许访问的IP
+```
 
 ### 升级说明：
 

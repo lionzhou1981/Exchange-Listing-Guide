@@ -1,13 +1,13 @@
-# BitcoinSV - BSV
+# Litecoin - LTC
 
 ### 官网地址：
-https://bitcoinsv.io/
+https://litecoin.org
 
 ### 钱包下载：
-https://download.bitcoinsv.io/bitcoinsv/
+* 同官网
 
 ### 查询网站：
-https://bsv.btc.com/
+http://explorer.litecoin.net/chain/Litecoin
 
 ### 开发文档
 * 同 BTC - Bitcoin
@@ -31,7 +31,7 @@ https://bsv.btc.com/
 1、估算当前费用
 ```
 curl -X POST -H 'content-type: text/plain;' http://127.0.0.1:8332/ -u RPC用户:RPC密码 \
--d '{"jsonrpc":"1.0","id":"随便写","method":"estimatefee","params":[期望多少个区块内到达]}'  
+-d '{"jsonrpc":"1.0","id":"随便写","method":"estimatesmartfee","params":[期望多少个区块内到达]}'  
 ```
 
 2、创建RAW交易

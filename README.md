@@ -1,9 +1,10 @@
 ## 已完成
 符号 | 名称
 --- | ---
-BCH | BitcoinCash  
-BSV | BitcoinSV  
+BCH | BitcoinCash
+BSV | BitcoinSV
 BTC | Bitcoin
+LTC | Litecoin
 
 ## 待完成
 ADA - Cardano  
@@ -13,7 +14,6 @@ EOS - EOS
 ERC20 - Ethereum ERC20 Token  
 ETH - Ethereum  
 LSK - Lisk  
-LTC - Litecoin  
 MOAC - MOAC  
 NEO - NEO  
 NEP5 - NEO NEP5 Token  

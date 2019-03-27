@@ -114,7 +114,7 @@ curl -X POST -H 'content-type: text/plain;' http://127.0.0.1:8332/ -u RPC用户:
 2、创建RAW交易
 ```
 curl -X POST -H 'content-type: text/plain;' http://127.0.0.1:8332/ -u RPC用户:RPC密码 \
--d '{"jsonrpc":"1.0","id":"随便写","method":"signrawtransactionwithkey","params":[[{"txid":"输出的Txid","vout":输出的Tx的序号}],[{"接收地址":接收金额}]}'  
+-d '{"jsonrpc":"1.0","id":"随便写","method":"createrawtransaction","params":[[{"txid":"输出的Txid","vout":输出的Tx的序号}],[{"接收地址":接收金额}]}'  
 ```
 
 3、签名RAW交易

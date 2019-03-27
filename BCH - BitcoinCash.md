@@ -36,9 +36,9 @@ curl -X POST -H 'content-type: text/plain;' http://127.0.0.1:8332/ -u RPC用户:
 2-4、同 BTC - Bitcoin
 
 ### 归集处理：
-* Bitcoin无需归集
+* 同 BTC - Bitcoin
 
 ### 灾难恢复：
-* 用户私钥加密后另外存储，以做备份，灾难发生时重建节点即可
+* 同 BTC - Bitcoin
 
 ### 注意事项：

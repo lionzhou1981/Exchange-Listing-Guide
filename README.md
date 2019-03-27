@@ -1,10 +1,12 @@
 ## 已完成
-BTC - Bitcoin
+符号 | 名称
+--- | ---
+BCH | BitcoinCash  
+BSV | BitcoinSV  
+BTC | Bitcoin
 
 ## 待完成
 ADA - Cardano  
-BCH - BitcoinCash  
-BSV - BitcoinSV  
 CMT - Cybermile  
 DASH - Dash  
 EOS - EOS  

@@ -7,6 +7,8 @@ BTC   | Bitcoin
 DASH  | Dash
 LTC   | Litecoin
 MONA  | Monacoin
+NEO   | NEO  
+NEP5  | NEO NEP5 Token  
 OMNI  | OmniLayer
 QTUM  | Qutm
 ZEC   | Zcash
@@ -19,8 +21,6 @@ ERC20 - Ethereum ERC20 Token
 ETH - Ethereum  
 LSK - Lisk  
 MOAC - MOAC  
-NEO - NEO  
-NEP5 - NEO NEP5 Token  
 TRX - Tron  
 TRC10 - Tron TRC10 Token  
 XMR - Monero  

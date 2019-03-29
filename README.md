@@ -6,6 +6,7 @@ BSV   | BitcoinSV
 BTC   | Bitcoin
 DASH  | Dash
 EOS   | EOS  
+LSK   | Lisk  
 LTC   | Litecoin
 MONA  | Monacoin
 NEO   | NEO  
@@ -20,7 +21,6 @@ ADA - Cardano
 CMT - Cybermile  
 ERC20 - Ethereum ERC20 Token  
 ETH - Ethereum  
-LSK - Lisk  
 MOAC - MOAC  
 TRX - Tron  
 TRC10 - Tron TRC10 Token  

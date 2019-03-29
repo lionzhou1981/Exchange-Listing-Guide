@@ -11,15 +11,20 @@ https://moneroblocks.info/
 
 ### 开发文档
 https://ww.getmonero.org/resources/developer-guides/
+
 ### 安装说明：
 1、解压缩文件  
-2、启动节点
+2、启动节点
 ```
 /安装目录/monerod --data-dir=数据目录
 ```
-3、启动钱包RPC
+3、启动钱包RPC（未创建钱包时）
 ```
 /安装目录/monero-wallet-rpc --rpc-bind-port RPC端口 --wallet-dir 钱包目录 --disable-rpc-login
+```
+4、启动钱包RPC（创建完钱包后）
+```
+/安装目录/monero-wallet-rpc --rpc-bind-port RPC端口 --wallet-file 钱包文件 --disable-rpc-login --prompt-for-password
 ```
 
 ### 配置文件：

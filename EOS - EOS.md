@@ -700,7 +700,7 @@ unlock-timeout = 900
 
 ### 升级说明：
 1、停止节点和钱包服务  
-2、安装新的版本
+2、安装新的版本  
 3、重新开启节点和钱包服务
 
 ### 创建地址：
@@ -724,7 +724,7 @@ https://www.eosx.io/tools/account/create?by=other&enableTransfer=false&name=&pub
 ```
 curl -X POST -H 'content-type: application/json' http://host/:port/v1/chain/get_info
 ```
-* 获取 `last_irreversible_block_num` 的不可逆的区块高度
+* 获取 `last_irreversible_block_num` 的不可逆的区块高度  
 2、根据区块Hash获取交易列表
 ```
 curl -X POST -H 'content-type: application/json' http://host/:port/v1/chain/get_block \
@@ -738,14 +738,14 @@ curl -X POST -H 'content-type: application/json' http://host/:port/v1/chain/get_
 ```
 curl -X POST -H 'content-type: application/json' http://host/:port/v1/chain/get_info
 ```
-* 获取 `last_irreversible_block_num` 的不可逆的区块高度
+* 获取 `last_irreversible_block_num` 的不可逆的区块高度  
 2、根据区块Hash获取交易列表
 ```
 curl -X POST -H 'content-type: application/json' http://host/:port/v1/chain/get_block \
 -d '{"block_num_or_id":区块高度}'  
 ```
 * 获取 `ref_block_prefix` 字段
-* 获取 `timestamp` 字段，并加上20分钟作为发送时所使用的超时字段
+* 获取 `timestamp` 字段，并加上20分钟作为发送时所使用的超时字段  
 3、调用 `abi_json_to_bin` 生成转账信息
 ```
 curl -X POST -H 'content-type: application/json' http://host/:port/v1/chain/abi_json_to_bin \

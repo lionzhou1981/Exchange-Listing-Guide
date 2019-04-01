@@ -13,6 +13,7 @@ NEO   | NEO
 NEP5  | NEO NEP5 Token  
 OMNI  | OmniLayer
 QTUM  | Qutm
+TRX   | Tron  
 XMR   | Monero  
 XRP   | Ripple  
 ZEC   | Zcash
@@ -23,7 +24,6 @@ CMT - Cybermile
 ERC20 - Ethereum ERC20 Token  
 ETH - Ethereum  
 MOAC - MOAC  
-TRX - Tron  
 TRC10 - Tron TRC10 Token  
 
 ## 计划中

@@ -7,7 +7,7 @@ https://qtum.org
 https://qtumeco.io/wallet
 
 ### 查询网站：
-https://qtum.info/
+https://explorer.qtum.org
 
 ### 开发文档
 https://qtum.org/en/developer
@@ -16,7 +16,10 @@ https://qtum.org/en/developer
 * 同 BTC - Bitcoin (文件名区别)
 
 ### 配置文件：
-* 同 BTC - Bitcoin
+```
+stacking=0          # 交易所需要关闭这个，会自动产生挖矿交易，可能导致重复入账  
+```
+* 其它的同 BTC - Bitcoin
 
 ### 升级说明：
 * 同 BTC - Bitcoin

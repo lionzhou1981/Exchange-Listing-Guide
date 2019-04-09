@@ -12,8 +12,15 @@ https://explorer.lisk.io
 ### 开发文档
 https://lisk.io/documentation/lisk-core/user-guide/api
 
-### 安装说明：
+### 安装说明：`
+1、首先安装`lisk-core`  
+```
 https://lisk.io/documentation/lisk-core/setup
+```
+2、还需要安装`lisk-commander`
+```
+https://lisk.io/documentation/lisk-commander/setup
+```
 
 ### 配置文件：
 https://lisk.io/documentation/lisk-core/user-guide/configuration

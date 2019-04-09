@@ -38,6 +38,7 @@ curl -X POST -H 'content-type: application/json' http://127.0.0.1:8500/wallet/ge
 ret/contractRet = "SUCCESS"
 raw_data/contract/type = "TransferContract"
 raw_data/contract/parameter/type_url = "type.googleapis.com/protocol.TransferAssetContract"
+raw_data/contract/parameter/value/asset_name = 是Token的名称的ASCII值
 ```
 3、获取单个交易详细
 ```

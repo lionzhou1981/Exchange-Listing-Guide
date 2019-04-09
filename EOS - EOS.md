@@ -779,3 +779,5 @@ curl -X POST -H 'content-type: application/json' http://host/:port/v1/wallet/loc
 * 单一钱包的私钥保存好即可灾难恢复
 
 ### 注意事项：
+* 区块快照下载：https://eosnode.tools/blocks
+* 停止节点时必须正常停止、否贼需要hard-reply，速度非常慢

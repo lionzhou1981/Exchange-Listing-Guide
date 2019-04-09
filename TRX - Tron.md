@@ -24,6 +24,7 @@ https://github.com/tronprotocol/tron-cli
 ### 配置文件：
 * 首次同步较慢，可以通过这里 `https://backups.trongrid.io/` 下载离线包后开启节点
 * `/数据目录/tron_nodes/fullnode/full.conf` 可修改配置，也可用`tron-cli config`来修改
+* 配置文件中的 `storage/transHistory.switch` 需要设置为 `on` 
 * 没找到绑定IP的配置，这里给个差评，所有端口都是绑定到 0.0.0.0 的，这个有安全隐患
 
 ### 升级说明：

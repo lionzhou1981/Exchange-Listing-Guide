@@ -6,6 +6,8 @@ BSV   | BitcoinSV
 BTC   | Bitcoin
 DASH  | Dash
 EOS   | EOS  
+ERC20 | Ethereum ERC20 Token  
+ETH   | Ethereum  
 LSK   | Lisk  
 LTC   | Litecoin
 MONA  | Monacoin
@@ -22,8 +24,6 @@ ZEC   | Zcash
 ## 待完成
 ADA - Cardano  
 CMT - Cybermile  
-ERC20 - Ethereum ERC20 Token  
-ETH - Ethereum  
 MOAC - MOAC  
 
 ## 计划中

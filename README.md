@@ -4,12 +4,14 @@
 BCH   | BitcoinCash
 BSV   | BitcoinSV
 BTC   | Bitcoin
+CMT   | Cybermile  
 DASH  | Dash
 EOS   | EOS  
 ERC20 | Ethereum ERC20 Token  
 ETH   | Ethereum  
 LSK   | Lisk  
 LTC   | Litecoin
+MOAC  | MOAC  
 MONA  | Monacoin
 NEO   | NEO  
 NEP5  | NEO NEP5 Token  
@@ -23,8 +25,6 @@ ZEC   | Zcash
 
 ## 待完成
 ADA - Cardano  
-CMT - Cybermile  
-MOAC - MOAC  
 
 ## 计划中
 XLM - Stellar  

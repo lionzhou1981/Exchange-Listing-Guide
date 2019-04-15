@@ -1,6 +1,7 @@
 ## 已完成
 符号  | 名称
 ---   | ---
+ADA   | Cardano  
 BCH   | BitcoinCash
 BSV   | BitcoinSV
 BTC   | Bitcoin
@@ -11,6 +12,7 @@ ERC20 | Ethereum ERC20 Token
 ETH   | Ethereum  
 LSK   | Lisk  
 LTC   | Litecoin
+MERCI | Merci
 MOAC  | MOAC  
 MONA  | Monacoin
 NEO   | NEO  
@@ -23,9 +25,6 @@ XMR   | Monero
 XRP   | Ripple  
 ZEC   | Zcash
 
-## 待完成
-ADA - Cardano  
-
-## 计划中
+## 制作中
 XLM - Stellar  
 XEM - NEM

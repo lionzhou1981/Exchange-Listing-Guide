@@ -59,7 +59,7 @@ curl -X POST http://127.0.0.1:8090/api/v1/addresses \
 ```
 * 助记词可通过以下网站生成
 ```
-
+https://www.liaoxuefeng.com/wiki/0015223693709562f80977e6c9549f0a1e17640a61433d6000/0015223800842062cc09cdd70dc45b8992c3b399386673a000
 ```
 
 ### 追踪入账：

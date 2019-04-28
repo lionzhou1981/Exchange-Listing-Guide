@@ -30,6 +30,91 @@ https://developers.eos.io/eosio-home/docs/setting-up-your-environment
 ```
 * 可以使用 `screen` 或者 `supervisor` 来运行
 
+### 升级说明：
+1、停止节点和钱包服务  
+2、安装新的版本  
+3、重新开启节点和钱包服务
+
+### 创建地址：
+1、使用命令行创建一个钱包
+```
+cleos wallet create -n wallet-name --to-console
+```
+2、使用命令行创建一个Key
+```
+cleos wallet create_key -n wallet-name
+```
+3、使用 eosx.io 对Pubkey进行抵押操作
+```
+https://www.eosx.io/tools/account/create?by=other&enableTransfer=false&name=&publicKey=
+```
+4、找一个交易所购买相应的EOS并提取到第3步所指定的地址  
+5、开通后可使用，交易所的用户的账号用分配memo编号的方式进行区分  
+
+### 追踪入账：
+1、获取最新的区块高度
+```
+curl -X POST -H 'content-type: application/json' http://host:port/v1/chain/get_info
+```
+* 获取 `last_irreversible_block_num` 的不可逆的区块高度  
+2、根据区块Hash获取交易列表
+```
+curl -X POST -H 'content-type: application/json' http://host:port/v1/chain/get_block \
+-d '{"block_num_or_id":区块高度}'  
+```
+* `account` 为 `eosio.token` 的就是EOS的交易，`account` 字段是EOS Token的区分字段
+* `name` 为 `transfer` 的是转账的交易，其余的交易可忽略
+* `status` 为 `executed` 的是即时到账的交易，`delayed` 状态的存在隐患，交易所可弃用此状态的交易
+
+### 对外提币：
+1、获取最新的区块高度
+```
+curl -X POST -H 'content-type: application/json' http://host:port/v1/chain/get_info
+```
+* 获取 `last_irreversible_block_num` 的不可逆的区块高度  
+2、根据区块Hash获取交易列表
+```
+curl -X POST -H 'content-type: application/json' http://host:port/v1/chain/get_block \
+-d '{"block_num_or_id":区块高度}'  
+```
+* 获取 `ref_block_prefix` 字段
+* 获取 `timestamp` 字段，并加上20分钟作为发送时所使用的超时字段  
+3、调用 `abi_json_to_bin` 生成转账信息
+```
+curl -X POST -H 'content-type: application/json' http://host:port/v1/chain/abi_json_to_bin \
+-d '{"code":"eosio.token","action":"transfer","args":{"from":"交易所钱包名称","to":"接收人钱包名称","quantity":数量,"memo":"备注信息"}}'  
+```
+4、解锁钱包
+```
+curl -X POST -H 'content-type: application/json' http://host:port/v1/wallet/unlock \
+-d '["交易所钱包名称","解锁密码"]'  
+```
+5、对交易进行签名
+```
+curl -X POST -H 'content-type: application/json' http://host:port/v1/wallet/sign_transaction \
+-d '[{"ref_block_num":"第1步取的区块高度","ref_block_prefix":"第2步取的ref_block_prefix","expiration":"第2步取的时间戳加20分钟","max_net_usage_words":0,"max_cpu_usage_ms":0,"delay_sec":0,"signatures":[],"actions":[{"account","eosio.token","name":"transfer","data":"第3步返回的Hex","authorization":[{"actor":"交易所钱包名称","permission":"active"}]}]},"交易所钱包公钥"，"aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906"]'  
+```
+6、向链上推送交易
+```
+curl -X POST -H 'content-type: application/json' http://host:port/v1/chain/push_transaction \
+-d '{"compression":"none","transaction":{"ref_block_num":"第1步取的区块高度","ref_block_prefix":"第2步取的ref_block_prefix","expiration":"第2步取的时间戳加20分钟","max_net_usage_words":0,"max_cpu_usage_ms":0,"delay_sec":0,"signatures":[],"actions":[{"account","eosio.token","name":"transfer","data":"第3步返回的Hex","authorization":[{"actor":"交易所钱包名称","permission":"active","transaction_extensions":[],"context_free_actions":[]}]}]},"signatures":"第5步的签名"}'  
+```
+7、锁定钱包
+```
+curl -X POST -H 'content-type: application/json' http://host:port/v1/wallet/lock \
+-d '["交易所钱包名称"]'  
+```
+
+### 归集处理：
+* 无需归集
+
+### 灾难恢复：
+* 单一钱包的私钥保存好即可灾难恢复
+
+### 注意事项：
+* 区块快照下载：https://eosnode.tools/blocks
+* 停止节点时必须正常停止、否贼需要hard-reply，速度非常慢
+
 ### 配置文件：
 ```
 vi /数据目录/config.ini
@@ -697,87 +782,3 @@ unlock-timeout = 900
 # Plugin(s) to enable, may be specified multiple times
 # plugin = 
 ```
-
-### 升级说明：
-1、停止节点和钱包服务  
-2、安装新的版本  
-3、重新开启节点和钱包服务
-
-### 创建地址：
-1、使用命令行创建一个钱包
-```
-cleos wallet create -n wallet-name --to-console
-```
-2、使用命令行创建一个Key
-```
-cleos wallet create_key -n wallet-name
-```
-3、使用 eosx.io 对Pubkey进行抵押操作
-```
-https://www.eosx.io/tools/account/create?by=other&enableTransfer=false&name=&publicKey=
-```
-4、找一个交易所购买相应的EOS并提取到第3步所指定的地址  
-5、开通后可使用，交易所的用户的账号用分配memo编号的方式进行区分  
-
-### 追踪入账：
-1、获取最新的区块高度
-```
-curl -X POST -H 'content-type: application/json' http://host:port/v1/chain/get_info
-```
-* 获取 `last_irreversible_block_num` 的不可逆的区块高度  
-2、根据区块Hash获取交易列表
-```
-curl -X POST -H 'content-type: application/json' http://host:port/v1/chain/get_block \
--d '{"block_num_or_id":区块高度}'  
-```
-* `account` 为 `eosio.token` 的就是EOS的交易，`account` 字段是EOS Token的区分字段
-* `name` 为 `transfer` 的是转账的交易，其余的交易可忽略
-
-### 对外提币：
-1、获取最新的区块高度
-```
-curl -X POST -H 'content-type: application/json' http://host:port/v1/chain/get_info
-```
-* 获取 `last_irreversible_block_num` 的不可逆的区块高度  
-2、根据区块Hash获取交易列表
-```
-curl -X POST -H 'content-type: application/json' http://host:port/v1/chain/get_block \
--d '{"block_num_or_id":区块高度}'  
-```
-* 获取 `ref_block_prefix` 字段
-* 获取 `timestamp` 字段，并加上20分钟作为发送时所使用的超时字段  
-3、调用 `abi_json_to_bin` 生成转账信息
-```
-curl -X POST -H 'content-type: application/json' http://host:port/v1/chain/abi_json_to_bin \
--d '{"code":"eosio.token","action":"transfer","args":{"from":"交易所钱包名称","to":"接收人钱包名称","quantity":数量,"memo":"备注信息"}}'  
-```
-4、解锁钱包
-```
-curl -X POST -H 'content-type: application/json' http://host:port/v1/wallet/unlock \
--d '["交易所钱包名称","解锁密码"]'  
-```
-5、对交易进行签名
-```
-curl -X POST -H 'content-type: application/json' http://host:port/v1/wallet/sign_transaction \
--d '[{"ref_block_num":"第1步取的区块高度","ref_block_prefix":"第2步取的ref_block_prefix","expiration":"第2步取的时间戳加20分钟","max_net_usage_words":0,"max_cpu_usage_ms":0,"delay_sec":0,"signatures":[],"actions":[{"account","eosio.token","name":"transfer","data":"第3步返回的Hex","authorization":[{"actor":"交易所钱包名称","permission":"active"}]}]},"交易所钱包公钥"，"aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906"]'  
-```
-6、向链上推送交易
-```
-curl -X POST -H 'content-type: application/json' http://host:port/v1/chain/push_transaction \
--d '{"compression":"none","transaction":{"ref_block_num":"第1步取的区块高度","ref_block_prefix":"第2步取的ref_block_prefix","expiration":"第2步取的时间戳加20分钟","max_net_usage_words":0,"max_cpu_usage_ms":0,"delay_sec":0,"signatures":[],"actions":[{"account","eosio.token","name":"transfer","data":"第3步返回的Hex","authorization":[{"actor":"交易所钱包名称","permission":"active","transaction_extensions":[],"context_free_actions":[]}]}]},"signatures":"第5步的签名"}'  
-```
-7、锁定钱包
-```
-curl -X POST -H 'content-type: application/json' http://host:port/v1/wallet/lock \
--d '["交易所钱包名称"]'  
-```
-
-### 归集处理：
-* 无需归集
-
-### 灾难恢复：
-* 单一钱包的私钥保存好即可灾难恢复
-
-### 注意事项：
-* 区块快照下载：https://eosnode.tools/blocks
-* 停止节点时必须正常停止、否贼需要hard-reply，速度非常慢

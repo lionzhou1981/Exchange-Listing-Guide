@@ -105,4 +105,5 @@ curl -X POST -H 'content-type: text/plain;' http://127.0.0.1:8332/ -u RPC用户:
 ### 灾难恢复：
 * 同 BTC - Bitcoin
 
-### 注意事项：
+### 从Segwit地址找回：
+https://github.com/OmniLayer/omniwallet/wiki/Recovering-funds-from-a-Segwit-Address

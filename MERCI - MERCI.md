@@ -1,5 +1,7 @@
 # MERCI - MERCI
 
+### 文档版本：0.16.1
+
 ### 官网地址：
 https://mercibq.com/
 

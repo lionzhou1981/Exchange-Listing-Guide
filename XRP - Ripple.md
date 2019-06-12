@@ -1,5 +1,7 @@
 # Ripple - XRP
 
+### 文档版本：1.2.4
+
 ### 官网地址：
 https://ripple.com/
 
@@ -56,6 +58,7 @@ curl -X POST -H 'content-type: application/json' http://127.0.0.1:5005/ \
 curl -X POST -H 'content-type: application/json' http://127.0.0.1:5005/ \
 -d '{"method":"tx","params":{"binary":false,"transaction":交易Id}}'  
 ```
+* 注意：金额使用delivered_amount字段，而不是amount字段
 
 ### 对外提币：
 1、获取当前的手续费

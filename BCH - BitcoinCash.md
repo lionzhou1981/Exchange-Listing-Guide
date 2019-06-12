@@ -1,5 +1,7 @@
 # BitcoinCash - BCH
 
+### 文档版本：0.19.7
+
 ### 官网地址：
 https://bitcoincash.org/
 

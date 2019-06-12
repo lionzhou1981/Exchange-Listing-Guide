@@ -1,5 +1,7 @@
 # Bitcoin - BTC
 
+### 文档版本：0.18.0
+
 ### 官网地址：
 https://bitcoin.org/
 
@@ -10,13 +12,13 @@ https://bitcoincore.org/en/download/
 https://btc.com/
 
 ### 开发文档
-https://bitcoincore.org/en/doc/0.17.0/
+https://bitcoincore.org/en/doc/0.18.0/
 
 ### 安装说明：
 1、解压缩文件
 ```
-tar -xvf bitcoin-0.17.1-x86_64-linux-gnu.tar.gz
-mv bitcoin-0.17.1-x86_64-linux-gnu bitcoin
+tar -xvf bitcoin-0.18.0-x86_64-linux-gnu.tar.gz
+mv bitcoin-0.18.0-x86_64-linux-gnu bitcoin
 ```
 
 2、创建服务

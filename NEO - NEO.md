@@ -1,4 +1,6 @@
-# NEO - BNEO
+# NEO - NEO
+
+### 文档版本：2.10.2
 
 ### 官网地址：
 https://neo.org/

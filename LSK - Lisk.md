@@ -1,5 +1,7 @@
 # Lisk - LSK
 
+### 文档版本：1.6.0 / commander 2.1.0
+
 ### 官网地址：
 https://lisk.io
 
@@ -37,15 +39,15 @@ lisk account:create
 ### 追踪入账：
 1、获取最新的区块高度
 ```
-curl -X POST -H 'content-type: application/json' http://127.0.0.1:8000/api/node/status \
+curl -X GET -H 'content-type: application/json' http://127.0.0.1:8000/api/node/status \
 ```
 2、根据区块高度获取叫一列表
 ```
-curl -X POST -H 'content-type: application/json' http://127.0.0.1:8000/api/transactions?height=高度&limit=单页最大条数
+curl -X GET -H 'content-type: application/json' http://127.0.0.1:8000/api/transactions?height=高度&limit=单页最大条数
 ```
 3、根据TxId获取具体信息
 ```
-curl -X POST -H 'content-type: application/json' http://127.0.0.1:8000/api/transactions?id=交易TxId
+curl -X GET -H 'content-type: application/json' http://127.0.0.1:8000/api/transactions?id=交易TxId
 ```
 
 ### 对外提币：

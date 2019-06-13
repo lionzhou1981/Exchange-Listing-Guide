@@ -1,5 +1,7 @@
 # Tron - TRX
 
+### 文档版本：1.0.6
+
 ### 官网地址：
 https://tron.network
 

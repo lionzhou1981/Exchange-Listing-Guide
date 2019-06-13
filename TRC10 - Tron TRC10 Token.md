@@ -1,5 +1,7 @@
 # Tron TRC10 Token - TRC10
 
+### 文档版本：1.0.6
+
 ### 官网地址：
 https://tron.network
 

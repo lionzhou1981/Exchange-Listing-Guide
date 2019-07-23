@@ -1,18 +1,23 @@
 # Tron - TRX
 
-### 文档版本：1.0.6
+### 文档版本：3.6.1
 
 ### 官网地址：
 https://tron.network
 
 ### 钱包下载：
-https://ww.getmonero.org/downloads/
+https://github.com/tronprotocol/java-tron/releases
 
 ### 查询网站：
 https://tronscan.org/
 
 ### 开发文档
 https://developers.tron.network/
+
+### 服务器需求
+官方推荐: 16核 32G内存 - AWS: c5.4xlarge
+实测结果: 近期交易量增大8核16G会发生同步延迟，导致发送交易不成功，CPU长期在80%以上。
+* 吐槽：目前开发过节点里这个是服务器需求最高的了
 
 ### 安装说明：
 1、安装Python3  

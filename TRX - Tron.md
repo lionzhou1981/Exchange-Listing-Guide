@@ -1,6 +1,6 @@
 # Tron - TRX
 
-### 文档版本：3.6.1
+### 文档版本：3.6.5
 
 ### 官网地址：
 https://tron.network
@@ -35,7 +35,8 @@ https://github.com/tronprotocol/tron-cli
 * 没找到绑定IP的配置，这里给个差评，所有端口都是绑定到 0.0.0.0 的，这个有安全隐患
 
 ### 升级说明：
-执行一次 `tron-cli i` 来重新下载新版本。
+* 由于tron-cli项目更新的怠惰，无法在使用其直接更新
+* 请使用下载FullNode.jar覆盖本地full.jar的方式进行升级
 
 ### 创建地址：
 1、生成地址

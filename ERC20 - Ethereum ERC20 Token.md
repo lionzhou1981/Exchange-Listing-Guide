@@ -1,6 +1,7 @@
 # Ethereum ERC20 Token - ERC20
 
-### 文档版本：1.8.27
+### 文档版本：1.9.6
+检查日期: 2019.11.04
 
 ### 官网地址：
 https://www.ethereum.org/

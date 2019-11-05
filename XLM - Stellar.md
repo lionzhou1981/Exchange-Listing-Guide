@@ -1,6 +1,7 @@
 # Stellar - XLM
 
 ### 文档版本：12.1.0
+检查日期: 2019.11.04
 
 ### 官网地址：
 https://www.stellar.org/

@@ -21,10 +21,10 @@ OMNI  | OmniLayer | 否 | -
 QTUM  | Qutm | 是 | 无
 TRC10 | Tron TRC10 Token | 否 | -
 TRX   | Tron | 是 | 有
+XLM   | Stellar | 是 | 有
 XMR   | Monero | 是 | 无
 XRP   | Ripple | 是 | 无
 ZEC   | Zcash | 是 | 无
 
 ## 制作中
-XLM - Stellar  
 XEM - NEM

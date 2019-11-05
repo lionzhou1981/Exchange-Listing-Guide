@@ -1,6 +1,7 @@
 # OmniLayer - OMNI
 
-### 文档版本：0.5.0
+### 文档版本：0.6.0
+检查日期: 2019.11.04
 
 ### 官网地址：
 http://www.omnilayer.org/

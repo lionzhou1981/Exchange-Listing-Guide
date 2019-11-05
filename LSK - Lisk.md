@@ -1,6 +1,7 @@
 # Lisk - LSK
 
-### 文档版本：1.6.0 / commander 2.1.0
+### 文档版本：2.1.3 / commander 2.2.3
+检查日期: 2019.11.04
 
 ### 官网地址：
 https://lisk.io

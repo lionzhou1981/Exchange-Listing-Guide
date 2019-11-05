@@ -1,6 +1,7 @@
 # Monacoin - MONA
 
 ### 文档版本：0.17.1
+检查日期: 2019.11.04
 
 ### 官网地址：
 https://monacoin.org/

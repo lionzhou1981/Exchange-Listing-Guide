@@ -162,8 +162,40 @@ stellar-core gen-seed
 3、交易所用户的地址使用TAG来进行区分，所以整个交易所只需要一个地址即可
 
 ### 追踪入账：
+1、获取最新的区块高度
+```
+curl -X GET -H 'content-type: application/json' 'http://127.0.0.1:8000/ledgers?limit=1&order=desc'
+```
+2、根据区块高度获取叫一列表
+```
+curl -X GET -H 'content-type: application/json' 'http://127.0.0.1:8000/ledgers/区块高度/payments?limit=200&order=asc'
+
+* 验证以下数据
+asset_type = 'native'           # 验证是否原生XLM币种
+type = 'payment'                # 验证交易类型
+transaction_successful = true   # 验证交易是否成功
+```
+3、根据TxId获取具体信息
+```
+curl -X GET -H 'content-type: application/json' 'http://127.0.0.1:8000/transactions/交易的Hash'
+```
 
 ### 对外提币：
+1、由于Horizon不包含sign功能，建议引用官方的SDK来封装一个专门签名的独立程序
+```
+官方SDK：
+Python版    : https://github.com/StellarCN/py-stellar-base
+.Net版      : https://github.com/elucidsoft/dotnet-stellar-sdk
+Ruby版      : https://github.com/stellar/ruby-stellar-sdk
+iOS & Mac版 : https://github.com/Soneso/stellar-ios-mac-sdk
+Scala版     : https://github.com/Synesso/scala-stellar-sdk
+C++版       : https://github.com/bnogalm/StellarQtSDK
+```
+2、提交交易
+```
+curl -X POST -H 'content-type: application/json' 'http://127.0.0.1:8000/transactions' \
+-d 'tx=签名后的交易数据'  
+```
 
 ### 归集处理：
 * 无需归集

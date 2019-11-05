@@ -66,7 +66,7 @@ curl -X POST -H 'content-type: application/json' http://127.0.0.1:5005/ \
 curl -X POST -H 'content-type: application/json' http://127.0.0.1:5005/ \
 -d '{"method":"fee","params":[]}'  
 ```
-2、获取当前的手续费
+2、提交交易
 ```
 curl -X POST -H 'content-type: application/json' http://127.0.0.1:5005/ \
 -d '{"method":"submit","params":{"seed_hex":"创建地址时的master_hex","key_type":"secp256k1","tx_json":{"TransactionType":"Payment","Account":"交易所地址","Destination":"接收地址","Amount":支出数量,"DestinationTag":"接受地址TAG"},"fee_mult_max":第1步取到的手续费}}'  

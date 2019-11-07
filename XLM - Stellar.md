@@ -165,20 +165,22 @@ stellar-core gen-seed
 ### 追踪入账：
 1、获取最新的区块高度
 ```
-curl -X GET -H 'content-type: application/json' 'http://127.0.0.1:8000/ledgers?limit=1&order=desc'
+curl -X GET 'http://127.0.0.1:8000/ledgers?limit=1&order=desc'
 ```
 2、根据区块高度获取叫一列表
 ```
-curl -X GET -H 'content-type: application/json' 'http://127.0.0.1:8000/ledgers/区块高度/payments?limit=200&order=asc'
+curl -X GET 'http://127.0.0.1:8000/ledgers/区块高度/payments?limit=200&order=asc'
 
 * 验证以下数据
 asset_type = 'native'           # 验证是否原生XLM币种
 type = 'payment'                # 验证交易类型
 transaction_successful = true   # 验证交易是否成功
+
+* 如果一个区块的交易超过200个，需要通过cursor来循环获取
 ```
 3、根据TxId获取具体信息
 ```
-curl -X GET -H 'content-type: application/json' 'http://127.0.0.1:8000/transactions/交易的Hash'
+curl -X GET 'http://127.0.0.1:8000/transactions/交易的Hash'
 ```
 
 ### 对外提币：
@@ -194,7 +196,7 @@ C++版       : https://github.com/bnogalm/StellarQtSDK
 ```
 2、提交交易
 ```
-curl -X POST -H 'content-type: application/json' 'http://127.0.0.1:8000/transactions' \
+curl -X POST 'http://127.0.0.1:8000/transactions' \
 -d 'tx=签名后的交易数据'  
 ```
 

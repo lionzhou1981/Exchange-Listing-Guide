@@ -1,13 +1,13 @@
 # Ripple - XRP
 
-### 文档版本：1.2.4
-检查日期: 2019.11.04
+### 文档版本：1.3.1
+检查日期: 2019.12.01
 
 ### 官网地址：
 https://ripple.com/
 
 ### 钱包下载：
-* 直接通过源安装
+https://xrpl.org/install-rippled.html
 
 ### 查询网站：
 https://xrpcharts.ripple.com/
@@ -16,9 +16,7 @@ https://xrpcharts.ripple.com/
 https://developers.ripple.com/
 
 ### 安装说明：
-```
-/opt/ripple/bin/update-rippled.sh
-```
+https://xrpl.org/install-rippled.html
 
 ### 配置文件：
 ```
@@ -30,10 +28,7 @@ vi /opt/ripple/etc/rippled.cfg
 * 配置文件尾部添加 `signing_support` 配置块，值为 `true`
 
 ### 升级说明：
-根据文档的说明进行更新
-```
-https://developers.ripple.com/install-rippled.html
-```
+https://xrpl.org/install-rippled.html
 
 ### 创建地址：
 1、通过命令行创建一个地址

@@ -1,7 +1,7 @@
 # Monero - XMR
 
-### 文档版本：0.14.1.2
-检查日期: 2019.11.04
+### 文档版本：0.15.0.1
+检查日期: 2019.12.19
 
 ### 官网地址：
 https://ww.getmonero.org/
@@ -44,7 +44,11 @@ https://ww.getmonero.org/resources/developer-guides/
 ```
 /安装目录/monero-wallet-cli --generate-new-wallet 钱包名称
 ```
-2、为每个用户生成独立的Payment ID  
+2、创建子地址
+```
+curl -X POST -H 'content-type: text/plain;' http://127.0.0.1:PRC端口/ \
+-d '{"jsonrpc":"2.0","id":"随便写","method":"create_address","params":{"account_index":0}}'  
+```
 
 ### 追踪入账：
 1、获取最新的区块高度
@@ -76,7 +80,7 @@ curl -X POST -H 'content-type: text/plain;' http://127.0.0.1:PRC端口/ \
 ### 对外提币：
 ```
 curl -X POST -H 'content-type: text/plain;' http://127.0.0.1:PRC端口/ \
--d '{"jsonrpc":"1.0","id":"随便写","method":"transfer","params":{"destinations":[{"address":"接收方的Address","amount":发送数量}],"account_index":本地账户Account序号,"priority":0,"mixin":,0"ring_size":1,"get_tx_metadata":false,"get_tx_hex":true,"new_algorithm":false,"unlock_time":0,"payment_id":"接收方的Payment ID"}}'  
+-d '{"jsonrpc":"1.0","id":"随便写","method":"transfer","params":{"destinations":[{"address":"接收方的Address","amount":发送数量}],"account_index":本地账户Account序号,"priority":0,"mixin":,0"ring_size":1,"get_tx_metadata":false,"get_tx_hex":true,"new_algorithm":false,"unlock_time":0}}'  
 ```
 
 ### 归集处理：

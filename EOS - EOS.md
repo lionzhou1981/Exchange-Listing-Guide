@@ -1,7 +1,7 @@
 # EOS - EOS
 
-### 文档版本：1.8.7
-检查日期: 2019.12.31
+### 文档版本：2.0.3
+检查日期: 2020.02.16
 
 ### 官网地址：
 https://eos.io/
@@ -32,6 +32,18 @@ https://developers.eos.io/eosio-home/docs/setting-up-your-environment
 /usr/bin/keosd --data-dir (钱包文件目录) --config-dir (钱包config.infi目录) --unix-socket-path (sock文件路径)
 ```
 * 可以使用 `screen` 或者 `supervisor` 来运行
+
+### 快照启动
+1、下载最新的快照
+```
+https://snapshots.eossweden.org/
+```
+2、解压缩快照到任意目录
+3、首次执行以下命令启动
+```
+/usr/bin/nodeos --data-dir (数据目录) --config-dir (config.ini文件所在目录) --snapshot (解压缩后的bin文件的地址)
+```
+4、以后可以用普通命令启动节点
 
 ### 升级说明：
 1、停止节点和钱包服务  
@@ -124,10 +136,10 @@ vi /数据目录/config.ini
 ```
 ```
 # the endpoint upon which to listen for incoming connections (eosio::bnet_plugin)
-bnet-endpoint = 0.0.0.0:4321
+# bnet-endpoint = 0.0.0.0:4321
 
 # this peer will request only irreversible blocks from other nodes (eosio::bnet_plugin)
-bnet-follow-irreversible = 0
+# bnet-follow-irreversible = 0
 
 # the number of threads to use to process network messages (eosio::bnet_plugin)
 # bnet-threads = 
@@ -136,7 +148,7 @@ bnet-follow-irreversible = 0
 # bnet-connect = 
 
 # this peer will request no pending transactions from other nodes (eosio::bnet_plugin)
-bnet-no-trx = false
+# bnet-no-trx = false
 
 # The string used to format peers when logging messages about them.  Variables are escaped with ${<variable name>}.
 # Available Variables:
@@ -153,7 +165,7 @@ bnet-no-trx = false
 #    _lport 	local port number connected to peer
 # 
 #  (eosio::bnet_plugin)
-bnet-peer-log-format = ["${_name}" ${_ip}:${_port}]
+# bnet-peer-log-format = ["${_name}" ${_ip}:${_port}]
 
 # the location of the blocks directory (absolute path or relative to application data dir) (eosio::chain_plugin)
 blocks-dir = "blocks"
@@ -162,7 +174,8 @@ blocks-dir = "blocks"
 # checkpoint = 
 
 # Override default WASM runtime (eosio::chain_plugin)
-# wasm-runtime = 
+wasm-runtime = eos-vm-jit
+eos-vm-oc-enable = true
 
 # Override default maximum ABI serialization time allowed in ms (eosio::chain_plugin)
 abi-serializer-max-time-ms = 15000
@@ -180,7 +193,10 @@ reversible-blocks-db-size-mb = 50000
 reversible-blocks-db-guard-size-mb = 128
 
 # Number of worker threads in controller thread pool (eosio::chain_plugin)
-chain-threads = 100
+chain-threads = 20
+producer-threads = 20
+net-threads = 20
+http-threads = 20
 
 # print contract's output to console (eosio::chain_plugin)
 contracts-console = false
@@ -269,7 +285,7 @@ max-body-size = 1048576
 verbose-http-errors = false
 
 # If set to false, then any incoming "Host" header is considered valid (eosio::http_plugin)
-http-validate-host = 1
+http-validate-host = false
 
 # Additionaly acceptable values for the "Host" header of incoming HTTP requests, can be specified multiple times.  Includes http/s_server_address by default. (eosio::http_plugin)
 # http-alias = 
@@ -719,7 +735,7 @@ txn-reference-block-lag = 0
 # Plugin(s) to enable, may be specified multiple times
 # plugin = 
 plugin = eosio::mongo_db_plugin
-plugin = eosio::bnet_plugin
+#plugin = eosio::bnet_plugin
 plugin = eosio::net_plugin
 plugin = eosio::chain_plugin
 plugin = eosio::chain_api_plugin

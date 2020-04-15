@@ -10,8 +10,8 @@ https://www.stellar.org/
 https://github.com/stellar/packages/tree/master/docs
 
 ### 查询网站：
-https://dashboard.stellar.org/
-https://stellarbeat.io/
+https://dashboard.stellar.org/<br>
+https://stellarbeat.io/ <br>
 https://stellar.expert/explorer/public/
 
 ### 开发文档
@@ -132,7 +132,7 @@ stellar-horizon \
 --stellar-core-db-url "postgres://postgres:postgres@localhost/core_db?sslmode=disable" \
 --stellar-core-url http://localhost:11626 \
 --network-passphrase "Public Global Stellar Network ; September 2015" \
-db backfill 50000
+db reingest range 29168700 29188700
 ```
 7、stellar-horizon启动
 ```

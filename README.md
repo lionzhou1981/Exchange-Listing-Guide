@@ -13,7 +13,6 @@ ETH   | Ethereum | 是 | 有
 LSK   | Lisk | 是 | 无
 LTC   | Litecoin | 是 | 无
 MERCI | Merci | 是 | 无
-MOAC  | MOAC | 是 | 无
 MONA  | Monacoin | 是 | 无
 NEO   | NEO | 是 | 有
 NEP5  | NEO NEP5 Token | 否 | -
@@ -24,7 +23,5 @@ TRX   | Tron | 是 | 有
 XLM   | Stellar | 是 | 有
 XMR   | Monero | 是 | 无
 XRP   | Ripple | 是 | 无
+XTZ   | Tezos | 是 | 
 ZEC   | Zcash | 是 | 无
-
-## 制作中
-XEM - NEM

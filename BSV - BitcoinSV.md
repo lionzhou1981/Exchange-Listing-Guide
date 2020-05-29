@@ -33,8 +33,7 @@ https://bsv.btc.com/
 ### 对外提币：
 1、估算当前费用
 ```
-curl -X POST -H 'content-type: text/plain;' http://127.0.0.1:8332/ -u RPC用户:RPC密码 \
--d '{"jsonrpc":"1.0","id":"随便写","method":"estimatefee","params":[期望多少个区块内到达]}'  
+estimatefee 接口已取消，官方文档说默认的fee是: 0.5sat/byte，根据这个计算预留的fee就行了。
 ```
 
 2、创建RAW交易

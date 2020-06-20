@@ -1,7 +1,9 @@
 # Stellar - XLM
 
-### 文档版本：12.4.0
-检查日期: 2020.03.16
+### 文档版本：
+Stellar-Core: 13.1.0
+Stellar-Horizon: 1.4.0
+检查日期: 2020.06.20
 
 ### 官网地址：
 https://www.stellar.org/
@@ -152,6 +154,9 @@ serve
 升级可详见以下链接：
 ```
 https://github.com/stellar/packages/blob/master/docs/upgrading.md
+
+Horizon更新后执行一次
+stellar-horizon db migrate up
 ```
 
 ### 创建地址：

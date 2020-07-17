@@ -13,7 +13,7 @@ https://github.com/input-output-hk/cardano-node
 https://cardanoexplorer.com/
 
 ### 开发文档
-https://cardanodocs.com
+https://cardanodocs.com  
 https://input-output-hk.github.io/cardano-wallet/api/edge/
 
 ### 安装说明：
@@ -85,7 +85,7 @@ curl -X GET http://127.0.0.1:8090/v2/byron-wallets/{walletId}/transactions/交�
 
 ### 对外提币：
 ```
-curl -X POST http://127.0.0.1:8090/api/v1/transactions \
+curl -X POST http://127.0.0.1:8090/v2/byron-wallets/{walletId}/transactions \
   -H "Accept: application/json; charset=utf-8" \
   -H "Content-Type: application/json; charset=utf-8" \
 -d '{"payments":[{"address":"目标地址","amount":{"quantity":提币金额,"unit":"lovelace"}}],"passphrase":"支付密码"}'

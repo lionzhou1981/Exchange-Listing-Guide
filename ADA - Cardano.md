@@ -2,6 +2,7 @@
 
 ### 文档版本：1.18.0
 检查日期: 2020.07.29
+* 注意此版本需要更新配置文件
 
 ### 官网地址：
 https://www.cardano.org/
@@ -37,7 +38,7 @@ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 
 ### 配置文件：
 ```
-https://hydra.iohk.io/build/3462018/download/1/index.html
+https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finished/download/1/index.html
 ```
 
 ### 升级说明：

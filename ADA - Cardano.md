@@ -48,24 +48,24 @@ https://hydra.iohk.io/job/Cardano/cardano-node/cardano-deployment/latest-finishe
 3、重新开启节点
 
 ### 创建地址：
-1、的钱包规则是 `Wallet` -> `Address`，交易所只需要一个`Wallet`即可，首先是创建钱包
+1、创建助记词
 ```
-curl -X POST http://127.0.0.1:8090/v2/byron-wallets \
-  -H "Accept: application/json; charset=utf-8" \
-  -H "Content-Type: application/json; charset=utf-8" \
-  -d '{ "style": "random", "name": "钱包本地名称", "passphrase": "支付密码","mnemonic_sentence": [12个助记词]}'
+cardano-address recovery-phrase generate --size XX
+XX是助记词的长度，可以是15、18、21、24
 ```
-2、最后创建`Address`
+2、将助记词创建入wallet
 ```
-curl -X POST http://127.0.0.1:8090/v2/byron-wallets/{第一步创建的WalletId}/addresses \
-  -H "Accept: application/json; charset=utf-8" \
-  -H "Content-Type: application/json; charset=utf-8" \
--d '{"passphrase":"第一步设置的支付密码"}'
+cardano-wallet wallet create from-recovery-phrase 设置钱包名称 --address-pool-gap 100
+输入助记词 -> 二级助记词（可以不设置） -> 设置一个钱包密码
+返回中会有钱包的ID
 ```
-* 助记词可通过以下网站生成
+3、等待钱包同步完成，可以通过以下命令查看同步状态
 ```
-https://www.liaoxuefeng.com/wiki/0015223693709562f80977e6c9549f0a1e17640a61433d6000/0015223800842062cc09cdd70dc45b8992c3b399386673a000
+cardano-wallet wallet get 钱包ID
 ```
+* 1.18.0版没有创建地址的命令，真不知道设计的人脑子怎么想的。
+* 解决方案是，每次获取unused的地址，然后往地址上打一笔最小金额的钱
+* 这样地址就会被用掉了，wallet会自动生成新的unused的地址
 
 ### 追踪入账：
 1、交易列表可以根据时间断来查询，由于不支持通过block查询，所以可以用上一笔交易的时间作为查询的start
